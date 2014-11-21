@@ -1,1 +1,4 @@
-%h1 This is the index placeholder
+- @posts.each do |post|
+	%h2= link_to post.title, post
+
+= link_to "New Inspiration", new_post_path
