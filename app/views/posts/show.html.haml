@@ -3,5 +3,14 @@
 %p= @post.link
 %p= @post.description
 
+#comments
+	%h2
+		= @post.comments.count
+		Comments
+	= render @post.comments
+
+	%h3 Reply to thread
+	= render "comments/form"
+
 = link_to "Edit", edit_post_path(@post)
 = link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }
