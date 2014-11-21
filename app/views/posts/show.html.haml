@@ -7,7 +7,9 @@
 	%h2
 		= @post.comments.count
 		Comments
-	= render @post.comments
+	- @comments.each do |comment|
+		= comment.content
+		= comment.user.name
 
 	%h3 Reply to thread
 	= render "comments/form"
