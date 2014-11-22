@@ -1,5 +1,9 @@
 - @posts.each do |post|
 	= image_tag post.image.url(:small)
 	%h2= link_to post.title, post
+	%p
+		Shared by
+		= post.user.name
+	%p= pluralize(post.comments.count, "Comment")
 
 = link_to "New Inspiration", new_post_path
