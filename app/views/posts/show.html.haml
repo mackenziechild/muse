@@ -2,6 +2,11 @@
 %h1= @post.title
 %p= @post.link
 %p= @post.description
+%p= @post.get_likes.size
+
+= link_to "Dislike", dislike_post_path(@post), method: :get
+
+= link_to "Like", like_post_path(@post), method: :get
 
 #comments
 	%h2= pluralize(@post.comments.count, "Comment")
