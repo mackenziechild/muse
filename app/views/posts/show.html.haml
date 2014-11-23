@@ -6,25 +6,29 @@
 		about
 		= time_ago_in_words(@post.created_at)
 	.clearfix
-		.col-left
+		.post_image_description
 			= image_tag @post.image.url(:medium)
-			.description= @post.description
-		.col-right
+			.description= simple_format(@post.description)
+		.post_data
 			= link_to "Visit Link", @post.link, class: "button"
-			.post_data
-				%p= @post.get_likes.size
-				= link_to "Edit", edit_post_path(@post)
-				= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }
-
-= link_to "Dislike", dislike_post_path(@post), method: :get
-
-= link_to "Like", like_post_path(@post), method: :get
+			= link_to like_post_path(@post), method: :get, class: "data" do
+				= pluralize(@post.get_upvotes.size, "Like")
+			= link_to dislike_post_path(@post), method: :get, class: "data" do
+				= pluralize(@post.get_downvotes.size, "Dislike")
+			- if @post.user == current_user
+				= link_to "Edit", edit_post_path(@post), class: "data"
+				= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "data"
+		.random_post
+			%h3 Random Inspiration
+			= link_to (image_tag @random_post.image.url(:medium)), post_path(@random_post)
+			= @random_post.title
+			= @random_post.user.name
 
 #comments
-	%h2= pluralize(@post.comments.count, "Reaction")
+	%h2.comment_count= pluralize(@post.comments.count, "Reaction")
 	- @comments.each do |comment|
-		= comment.content
-		= comment.user.name
+		.comment
+			%p.username= comment.user.name
+			%p.content= comment.content
 
-	%h3 Reply to thread
 	= render "comments/form"

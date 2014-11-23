@@ -7,6 +7,10 @@ body {
 	font-weight: 100;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 100;
+}
+
 .wrapper {
 	width: 80%;
 	margin: 0 auto;
@@ -25,6 +29,9 @@ body {
 	border: 1px solid #9B9B9B;
 	padding: .7rem 1.25rem;
 	border-radius: .3rem;
+	outline: none;
+	background: white;
+	color: #9B9B9B;
 }
 
 header {
