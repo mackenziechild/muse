@@ -16,7 +16,7 @@
 					= link_to current_user.name, edit_user_registration_path
 					= link_to "Add New Inspiration", new_post_path, class: "button"
 				- else
-					= link_to "Sign Up", new_user_registration_path
+					= link_to "Sign Up", new_user_registration_path, class: "button"
 	%p.notice= notice
 	%p.alert= alert
 	.wrapper
