@@ -21,6 +21,12 @@ body {
 	clear: both;
 }
 
+.button {
+	border: 1px solid #9B9B9B;
+	padding: .7rem 1.25rem;
+	border-radius: .3rem;
+}
+
 header {
 	width: 100%;
 	padding: 2rem 0;
@@ -47,12 +53,8 @@ header {
 				color: #50A7C7;
 			}
 		}
-		.button {
-			border: 1px solid #9B9B9B;
-			padding: .7rem 1.25rem;
-			border-radius: .3rem;
-		}
 	}
 }
 
 @import 'home.css.scss';
+@import 'post.css.scss';

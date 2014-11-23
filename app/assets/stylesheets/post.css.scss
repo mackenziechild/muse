@@ -1,0 +1,31 @@
+#post_show {
+	padding-top: 2rem;
+	.col-left {
+		width: 55%;
+		float: left;
+		margin-right: 5%;
+	}
+	.col-right {
+		width: 40%;
+		float: left;
+	}
+	h1 {
+		font-weight: 100;
+		margin: 0;
+		color: #333233;
+	}
+	img {
+		width: 100%;
+		border-radius: .3rem;
+	}
+	.username {
+		color: #969696;
+		margin: 0 0 1.5rem 0;
+	}
+	.description {
+		margin: 2rem 0;
+		font-size: 1.1rem;
+		line-height: 1.5;
+		color: #969696;
+	}
+}

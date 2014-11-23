@@ -1,21 +1,30 @@
-= image_tag @post.image.url(:medium)
-%h1= @post.title
-%p= @post.link
-%p= @post.description
-%p= @post.get_likes.size
+#post_show
+	%h1= @post.title
+	%p.username
+		Shared by
+		= @post.user.name
+		about
+		= time_ago_in_words(@post.created_at)
+	.clearfix
+		.col-left
+			= image_tag @post.image.url(:medium)
+			.description= @post.description
+		.col-right
+			= link_to "Visit Link", @post.link, class: "button"
+			.post_data
+				%p= @post.get_likes.size
+				= link_to "Edit", edit_post_path(@post)
+				= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }
 
 = link_to "Dislike", dislike_post_path(@post), method: :get
 
 = link_to "Like", like_post_path(@post), method: :get
 
 #comments
-	%h2= pluralize(@post.comments.count, "Comment")
+	%h2= pluralize(@post.comments.count, "Reaction")
 	- @comments.each do |comment|
 		= comment.content
 		= comment.user.name
 
 	%h3 Reply to thread
 	= render "comments/form"
-
-= link_to "Edit", edit_post_path(@post)
-= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }
