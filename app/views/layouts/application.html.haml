@@ -1,0 +1,14 @@
+!!!
+%html
+%head
+	%title Muse
+	= stylesheet_link_tag    'application', media: 'all'
+	= javascript_include_tag 'application'
+	%link{:rel => "stylesheet", :href => "http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css"}
+	%link{:rel => "stylesheet", :href => "http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"}
+	= csrf_meta_tags
+%body
+	%p.notice= notice
+	%p.alert= alert
+	.wrapper
+		= yield

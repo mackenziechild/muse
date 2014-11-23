@@ -1,0 +1,15 @@
+/*
+ *= require_self
+ */
+
+body {
+	font-family: "Proxima Nova";
+	font-weight: 100;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+@import 'home.css.scss';

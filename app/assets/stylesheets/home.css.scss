@@ -1,0 +1,30 @@
+#posts {
+	.post {
+		background: #F8F9FA;
+		width: 30%;
+		float: left;
+		margin: 1rem 1.5%;
+		border: 1px solid #E4E4E4;
+		border-radius: 0.3rem;
+		.post_image {
+			height: 200px;
+			overflow: hidden;
+			img {
+				width: 100%;
+				border-radius: .3rem .3rem 0 0;
+			}
+		}
+		.post_content {
+			h2 {
+				margin: 0;
+				font-weight: 100;
+				padding: 1rem 5%;
+				border-bottom: 1px solid #E4E4E4;
+				a {
+					text-decoration: none;
+					color: #333233;
+				}
+			}
+		}
+	}
+}
