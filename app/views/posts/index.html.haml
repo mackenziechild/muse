@@ -2,7 +2,7 @@
 	- @posts.each do |post|
 		.post
 			.post_image
-				= image_tag post.image.url(:small)
+				= link_to (image_tag post.image.url(:small)), post
 			.post_content
 				.title
 					%h2= link_to post.title, post
@@ -17,5 +17,3 @@
 						%span
 							%i.fa.fa-thumbs-o-up
 							= post.get_likes.size
-
-= link_to "New Inspiration", new_post_path

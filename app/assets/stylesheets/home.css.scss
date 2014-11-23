@@ -24,6 +24,9 @@
 				a {
 					text-decoration: none;
 					color: #333233;
+					&:hover {
+						color: #50A7C7;
+					}
 				}
 			}
 			.data {
