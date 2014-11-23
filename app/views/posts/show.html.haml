@@ -12,9 +12,14 @@
 		.post_data
 			= link_to "Visit Link", @post.link, class: "button"
 			= link_to like_post_path(@post), method: :get, class: "data" do
+				%i.fa.fa-thumbs-o-up
 				= pluralize(@post.get_upvotes.size, "Like")
 			= link_to dislike_post_path(@post), method: :get, class: "data" do
+				%i.fa.fa-thumbs-o-down
 				= pluralize(@post.get_downvotes.size, "Dislike")
+			%p.data
+				%i.fa.fa-comments-o
+				= pluralize(@post.comments.count, "Comment")
 			- if @post.user == current_user
 				= link_to "Edit", edit_post_path(@post), class: "data"
 				= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "data"
@@ -39,7 +44,7 @@
 								= @random_post.get_likes.size
 
 #comments
-	%h2.comment_count= pluralize(@post.comments.count, "Reaction")
+	%h2.comment_count= pluralize(@post.comments.count, "Comment")
 	- @comments.each do |comment|
 		.comment
 			%p.username= comment.user.name
