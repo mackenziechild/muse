@@ -20,9 +20,27 @@
 				font-weight: 100;
 				padding: 1rem 5%;
 				border-bottom: 1px solid #E4E4E4;
+				font-size: 1.25rem;
 				a {
 					text-decoration: none;
 					color: #333233;
+				}
+			}
+			.data {
+				padding: .75rem 5%;
+				color: #969696;
+				.username, .buttons {
+					margin: 0;
+					font-size: .8rem;
+				}
+				.username {
+					float: left;
+				}
+				.buttons {
+					float: right;
+					span {
+						margin-left: .5rem;
+					}
 				}
 			}
 		}

@@ -6,16 +6,16 @@
 			.post_content
 				.title
 					%h2= link_to post.title, post
-				.data
-					%p
+				.data.clearfix
+					%p.username
 						Shared by
 						= post.user.name
-					%p
+					%p.buttons
 						%span
 							%i.fa.fa-comments-o
 							= post.comments.count
 						%span
-							%i.fa.fa-thumbs-up
+							%i.fa.fa-thumbs-o-up
 							= post.get_likes.size
 
 = link_to "New Inspiration", new_post_path
